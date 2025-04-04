@@ -1,8 +1,14 @@
 import React from 'react'
+import TopBar from '../Layout/TopBar'
+import { Navbar } from '../Common/Navbar'
+
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <header className='border-b border-zinc-500'>
+        < TopBar />
+        < Navbar className="text-white" />
+    </header>
   )
 }
 

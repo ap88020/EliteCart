@@ -4,8 +4,8 @@ import { FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 
 const TopBar = () => {
   return (
-    <div className='bg-gray-600 text-green-400'>
-      <div className='container mx-auto flex justify-between items-center py-3 px-4'>
+    <div id='topBar' className=' bg-gray-600 text-green-400'>
+      <div className='container mx-auto flex justify-between items-center py-2 px-4'>
 
         {/* Left - Social Media Icons */}
         <div className='hidden md:flex space-x-3 items-center'>
