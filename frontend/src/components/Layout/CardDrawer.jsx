@@ -5,7 +5,7 @@ import CartContent from '../Cart/CartContent';
 const CardDrawer = ({drawerOpen,drawerToggle}) => {
     const [cartDrawerOpen, setcartDrawerOpen] = useState(false);
   return (
-    <div className={`fixed top-0 right-0 sm:w-1/2 md:w-[25rem] h-full bg-gray-600   flex flex-col transform transition-transform duration-200 ${
+    <div className={`fixed top-0 right-0 sm:w-1/2 md:w-[25rem] h-full bg-gray-600 z-50 flex flex-col transform transition-transform duration-200 ${
         drawerOpen ? "translate-x-0" : "translate-x-full"} `}>
         <button
          onClick={drawerToggle} 

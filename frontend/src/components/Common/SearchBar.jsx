@@ -27,7 +27,7 @@ const SearchBar = () => {
         onSubmit={handleSearch}
         className={`fixed top-0 left-0 w-full flex justify-between items-center 
                     bg-gray-600 transition-all duration-500 shadow-md 
-                    overflow-hidden  
+                    overflow-hidden z-50
                     ${isOpen ? "max-h-20 opacity-100 scale-100 px-6 py-3" : "max-h-0 opacity-0 scale-90"}`}
       >
         <div>
