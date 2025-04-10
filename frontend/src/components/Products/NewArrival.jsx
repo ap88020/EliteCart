@@ -105,13 +105,7 @@ const NewArrival = () => {
             const maxScrollLeft = container.scrollWidth - container.clientWidth;  
             setCanScrollLeft(leftScroll > 0);
             setCanScrollRight(leftScroll < maxScrollLeft);
-        }
-
-        console.log({
-            scrollLeft:container.scrollLeft,
-            clientWidth : container.clientWidth,
-            containerScrollWidth : container.scrollWidth,
-        });
+        } 
     }
     useEffect(() => {
         const container = scrollRef.current;

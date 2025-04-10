@@ -87,8 +87,8 @@ const ProductDetails = () => {
 
   return (
     <div className=' p-3'>
-        <div className=' max-w-6xl mx-auto bg-white p-4 rounded-lg'>
-            <div className='flex flex-col md:flex-row'>
+        <div className=' max-w-6xl mx-auto  bg-white p-4 rounded-lg'>
+            <div className='flex flex-col md:flex-row items-center border px-10 rounded'>
                 {/* left themnail */}
                 <div className='hidden md:flex flex-col space-y-4 mr-6'>
                     {
@@ -104,17 +104,21 @@ const ProductDetails = () => {
                     }
                 </div>
                 {/* main image */}
-                <div className="md:w-1/2">
-                    <div className='mb-4'>
-                        <img
-                            src={mainImage} 
-                            alt="altProduct"
-                            className='w-full h-auto object-cover rounded-lg'
-                        />
-                    </div>
-                </div>
+                {
+                    mainImage && (
+                        <div className="md:w-1/3 ">
+                            <div className='mb-4 pt-12'>
+                                <img
+                                    src={mainImage} 
+                                    alt="altProduct"
+                                    className='w-full h-auto object-cover rounded-lg'
+                                />
+                            </div>
+                        </div>
+                    )
+                }
                 {/* mobile Thumbnail */}
-                <div className='md:hidden flex overscroll-x-scroll space-x-4 mb-4'>
+                <div className='md:hidden flex overscroll-x-scroll space-x-4 mb-4 '>
                     {
                         selectProduct.images.map((image, index) => (
                             <img
@@ -127,20 +131,20 @@ const ProductDetails = () => {
                         ))
                     }
                 </div>
-                <div className='text-left md:w-1/2 md:ml-10'>
-                    <h1 className='text-2xl md:text-3xl font-semibold mb-2'>
+                <div className='text-left md:w-1/3 md:ml-28 '>
+                    <h1 className='text-2xl md:text-3xl font-semibold'>
                         {selectProduct.name}
                     </h1>
-                    <p className='text-lg text-gray-600 mb-1 line-through'>
+                    <p className='text-lg text-gray-600 line-through'>
                         {selectProduct.originalPrice && `${selectProduct.originalPrice}`}
                     </p>
-                    <p className='text-lg text-gray-500 mb-2'>
+                    <p className='text-lg text-gray-500'>
                         ${selectProduct.price}
                     </p>
-                    <p className='text-lg text-gray-600 mb-4'>
+                    <p className='text-lg text-gray-600'>
                         {selectProduct.description}
                     </p>
-                    <div className='flex gap-2 mt-2'>
+                    <div className='flex gap-2 '>
                         {
                             selectProduct.color.map((color) => (
                                 <button 
@@ -157,7 +161,7 @@ const ProductDetails = () => {
                     {/* clothes size */}
                     <div className='mb-4'>
                         <p className='text-gray-700'>Sizes :</p>
-                        <div className='flex gap-2 mt-2'>
+                        <div className='flex gap-2'>
                             {
                                 selectProduct.sizes.map((size) => (
                                     <button 
@@ -171,9 +175,9 @@ const ProductDetails = () => {
                             }
                         </div>
                     </div>
-                    <div className='mb-4'>
+                    <div>
                         <p className='text-gray-700'>Quantity :</p>
-                        <div className='flex space-x-4 items-center mt-2'>
+                        <div className='flex space-x-4 items-center'>
                             <button 
                                 onClick={() => handleChangeQuantity("minus")}
                                 className='text-lg bg-gray-200 rounded py-1 px-2'>
