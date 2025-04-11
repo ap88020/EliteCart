@@ -7,11 +7,18 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("User registered :" , {name,email,password});
+    }
+
     return (
         <div className='flex h-screen'>
             {/* Left column - Form */}
             <div className='w-full md:w-1/2 h-full flex flex-col justify-center items-center p-8 md:p-12'>
-                <form className='w-full max-w-md bg-white p-8 rounded-lg border shadow-sm'>
+                <form
+                 onSubmit={handleSubmit}
+                 className='w-full max-w-md bg-white p-8 rounded-lg border shadow-sm'>
                     <div className='flex justify-center mb-6'>
                         <h2 className='text-xl font-medium'>Rabbit</h2>
                     </div>
@@ -22,9 +29,9 @@ const Register = () => {
                     <div className='mb-4'>
                         <label className='block text-sm font-semibold mb-2 text-left'>Name</label>
                         <input 
-                            type="email"
+                            type="text"
                             value={name}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => setName(e.target.value)}
                             placeholder='Enter your email address'
                             className='w-full p-2 rounded border border-gray-400 outline-none' 
                         />
